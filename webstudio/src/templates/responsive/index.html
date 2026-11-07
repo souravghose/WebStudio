@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Layout Starter</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <a class="logo" href="#">Layout<span>Lab</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="nav">☰</button>
+    <nav id="nav" class="nav">
+      <a href="#intro">Intro</a>
+      <a href="#grid">Grid</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#info">Info</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro" class="intro">
+      <h1>One layout, every screen.</h1>
+      <p>Resize the preview — try the Tablet and Mobile buttons — and watch this page adapt using CSS Grid, Flexbox, fluid type and media queries.</p>
+      <p class="viewport">Viewport: <b id="vw">0</b> px · Layout: <b id="bp">—</b></p>
+    </section>
+
+    <section id="grid" class="section">
+      <h2>Auto-fit grid</h2>
+      <div class="cards">
+        <article class="card">1</article><article class="card">2</article><article class="card">3</article>
+        <article class="card">4</article><article class="card">5</article><article class="card">6</article>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <h2>Fluid gallery</h2>
+      <div class="gallery">
+        <div class="tile tall" style="--h: 280"></div><div class="tile" style="--h: 160"></div><div class="tile" style="--h: 200"></div>
+        <div class="tile" style="--h: 240"></div><div class="tile tall" style="--h: 300"></div><div class="tile" style="--h: 180"></div>
+      </div>
+    </section>
+
+    <section id="info" class="section split">
+      <div><h2>Content + sidebar</h2><p>On wide screens this section is a two-column layout. On narrow screens the columns stack automatically.</p></div>
+      <aside class="aside"><h3>Tip</h3><p>Use <code>clamp()</code> for fluid font sizes and <code>minmax()</code> for flexible grids.</p></aside>
+    </section>
+  </main>
+
+  <footer class="footer">Built with WebStudio</footer>
+  <script src="script.js"></script>
+</body>
+</html>

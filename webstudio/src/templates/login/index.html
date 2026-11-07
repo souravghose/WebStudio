@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign in — Acme</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section class="art">
+      <div class="art-inner">
+        <div class="mark">A</div>
+        <h2>Welcome back to Acme</h2>
+        <p>Sign in to pick up right where you left off.</p>
+      </div>
+    </section>
+
+    <section class="panel">
+      <div class="tabs" role="tablist">
+        <button class="tab on" data-mode="login" role="tab">Sign in</button>
+        <button class="tab" data-mode="signup" role="tab">Create account</button>
+      </div>
+
+      <form id="form" novalidate>
+        <h1 id="title">Sign in</h1>
+        <p class="sub" id="sub">Enter your details to continue.</p>
+
+        <label class="field signup-only" hidden>Full name
+          <input id="name" autocomplete="name" placeholder="Jane Doe" />
+          <small class="err"></small>
+        </label>
+
+        <label class="field">Email
+          <input id="email" type="email" autocomplete="email" placeholder="you@example.com" />
+          <small class="err"></small>
+        </label>
+
+        <label class="field">Password
+          <div class="pw">
+            <input id="password" type="password" autocomplete="current-password" placeholder="••••••••" />
+            <button type="button" id="toggle" aria-label="Show password">Show</button>
+          </div>
+          <div class="meter signup-only" hidden><i id="meterBar"></i></div>
+          <small class="err"></small>
+        </label>
+
+        <div class="row">
+          <label class="check"><input type="checkbox" id="remember" /> Remember me</label>
+          <a href="#" id="forgot">Forgot password?</a>
+        </div>
+
+        <button class="submit" id="submit" type="submit">Sign in</button>
+        <p class="result" id="result" role="status"></p>
+        <p class="hint">Demo only — no data is sent or stored anywhere.</p>
+      </form>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
