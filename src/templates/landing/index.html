@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flowly — Ship projects faster</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#"><span class="mark">F</span> Flowly</a>
+    <nav id="menu">
+      <a href="#features">Features</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+      <a class="btn small" href="#cta">Get started</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
+  </header>
+
+  <section class="hero">
+    <span class="pill">New · Flowly 2.0 is here</span>
+    <h1>Plan, track and ship work <em>without the chaos</em>.</h1>
+    <p>Flowly brings tasks, docs and team chat into one calm workspace so your team can focus on what matters.</p>
+    <form class="signup" id="signup">
+      <input type="email" id="signupEmail" placeholder="Enter your work email" required />
+      <button class="btn" type="submit">Start free</button>
+    </form>
+    <p class="note" id="signupNote">Free for 14 days · No credit card required</p>
+  </section>
+
+  <section class="logos"><span>Trusted by teams at</span><b>Acme</b><b>Globex</b><b>Initech</b><b>Umbrella</b><b>Hooli</b></section>
+
+  <section id="features" class="section">
+    <h2>Everything your team needs</h2>
+    <div class="features">
+      <div class="feature"><div class="ico">⚡</div><h3>Lightning fast</h3><p>Instant search, keyboard shortcuts and real-time sync keep you in flow.</p></div>
+      <div class="feature"><div class="ico">🔒</div><h3>Secure by default</h3><p>Encryption, SSO and granular permissions protect your work.</p></div>
+      <div class="feature"><div class="ico">📊</div><h3>Clear insights</h3><p>Dashboards that show progress and bottlenecks at a glance.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section alt">
+    <h2>Simple pricing</h2>
+    <div class="toggle"><span>Monthly</span><label class="switch"><input type="checkbox" id="billing" /><i></i></label><span>Yearly <b class="save">save 20%</b></span></div>
+    <div class="plans">
+      <div class="plan"><h3>Starter</h3><p class="price">$<span data-m="0" data-y="0">0</span></p><ul><li>Up to 5 users</li><li>Basic reporting</li><li>Community support</li></ul><a class="btn ghost" href="#cta">Choose Starter</a></div>
+      <div class="plan featured"><h3>Team</h3><p class="price">$<span data-m="12" data-y="10">12</span><small>/user/mo</small></p><ul><li>Unlimited users</li><li>Advanced reporting</li><li>Priority support</li></ul><a class="btn" href="#cta">Choose Team</a></div>
+      <div class="plan"><h3>Enterprise</h3><p class="price">$<span data-m="29" data-y="24">29</span><small>/user/mo</small></p><ul><li>SSO &amp; audit logs</li><li>Dedicated manager</li><li>99.9% SLA</li></ul><a class="btn ghost" href="#cta">Contact sales</a></div>
+    </div>
+  </section>
+
+  <section id="faq" class="section">
+    <h2>Frequently asked questions</h2>
+    <div class="faq">
+      <details><summary>Can I try Flowly for free?</summary><p>Yes — every plan starts with a 14-day free trial.</p></details>
+      <details><summary>Can I change plans later?</summary><p>Absolutely. Upgrade or downgrade at any time from settings.</p></details>
+      <details><summary>Do you offer discounts for non-profits?</summary><p>We do. Reach out to our team for a 50% non-profit discount.</p></details>
+    </div>
+  </section>
+
+  <section id="cta" class="cta"><h2>Ready to get started?</h2><p>Join thousands of teams already using Flowly.</p><a class="btn" href="#">Create your workspace</a></section>
+  <footer class="footer">© <span id="year"></span> Flowly Inc.</footer>
+  <script src="script.js"></script>
+</body>
+</html>

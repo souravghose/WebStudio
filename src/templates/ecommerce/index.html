@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nomad — Everyday essentials</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="promo">Free shipping on orders over $50 · Use code <b>WELCOME10</b></div>
+  <header class="nav">
+    <a class="brand" href="#">NOMAD</a>
+    <input id="search" type="search" placeholder="Search products…" />
+    <button id="cartBtn" class="cart">🛒 Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <section class="hero">
+    <div><p class="eyebrow">New season</p><h1>Carry less.<br />Go further.</h1><a class="btn" href="#shop">Shop collection</a></div>
+  </section>
+
+  <section id="shop" class="shop">
+    <div class="bar">
+      <div class="cats" id="cats"></div>
+      <select id="sort"><option value="featured">Featured</option><option value="low">Price: low to high</option><option value="high">Price: high to low</option><option value="rating">Top rated</option></select>
+    </div>
+    <div class="products" id="products"></div>
+  </section>
+
+  <aside id="drawer" class="drawer" aria-hidden="true">
+    <div class="drawer-head"><h3>Your cart</h3><button id="closeCart" aria-label="Close">✕</button></div>
+    <div id="cartItems" class="items"></div>
+    <div class="drawer-foot">
+      <div class="line"><span>Subtotal</span><b id="subtotal">$0.00</b></div>
+      <div class="promo-row"><input id="code" placeholder="Promo code" /><button id="applyCode">Apply</button></div>
+      <p id="codeMsg" class="msg"></p>
+      <div class="line total"><span>Total</span><b id="total">$0.00</b></div>
+      <button class="btn block" id="checkout">Checkout</button>
+    </div>
+  </aside>
+  <div id="scrim" class="scrim"></div>
+  <script src="script.js"></script>
+</body>
+</html>
