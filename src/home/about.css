@@ -1,0 +1,78 @@
+/* About page — builds on the homepage tokens in home.css (everything is scoped to .xd-home). */
+
+/* ---------- hero ---------- */
+.xa-hero { padding-top: clamp(112px, 15vw, 168px); padding-bottom: clamp(56px, 8vw, 96px); }
+.xa-hero-inner { position: relative; z-index: 1; text-align: center; }
+.xa-h1 { font-size: clamp(2.5rem, 6.4vw, 4.75rem); line-height: 1.04; letter-spacing: -0.045em; font-weight: 800; margin-top: 4px; }
+.xa-h1 span { display: block; }
+.xa-hero-lead { max-width: 40rem; margin: 22px auto 0; font-size: clamp(1rem, 1.6vw, 1.2rem); line-height: 1.75; color: var(--xd-muted); }
+
+/* floating code snippets (decorative) */
+.xa-chip {
+  position: absolute; z-index: 0; pointer-events: none; user-select: none;
+  padding: 8px 14px; border-radius: 12px; font: 500 13px/1.4 ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  color: var(--xd-muted); background: color-mix(in srgb, var(--xd-card) 82%, transparent);
+  border: 1px solid var(--xd-border); box-shadow: var(--xd-shadow); backdrop-filter: blur(6px);
+  animation: xd-float var(--dur, 7s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+.xa-chip b { font-weight: 600; color: var(--xd-accent2); }
+.xa-chip i { font-style: normal; color: var(--xd-accent); }
+.xa-chip.c1 { left: 4%; top: 30%; --dur: 6.5s; }
+.xa-chip.c2 { right: 5%; top: 24%; --dur: 7.5s; --delay: -2s; }
+.xa-chip.c3 { left: 10%; bottom: 8%; --dur: 8s; --delay: -4s; }
+.xa-chip.c4 { right: 9%; bottom: 12%; --dur: 6s; --delay: -1s; }
+@media (max-width: 1100px) { .xa-chip.c3, .xa-chip.c4 { display: none; } .xa-chip.c1 { left: 2%; } .xa-chip.c2 { right: 2%; } }
+@media (max-width: 760px) { .xa-chip { display: none; } }
+
+/* ---------- story (editorial) ---------- */
+.xa-story { display: grid; gap: clamp(28px, 5vw, 72px); }
+@media (min-width: 900px) { .xa-story { grid-template-columns: 5fr 7fr; align-items: start; } .xa-story-head { position: sticky; top: 104px; } }
+.xa-prose p { font-size: clamp(1.02rem, 1.4vw, 1.12rem); line-height: 1.85; color: var(--xd-muted); }
+.xa-prose p + p { margin-top: 1.4em; }
+.xa-prose p:first-child { font-size: clamp(1.15rem, 1.9vw, 1.4rem); line-height: 1.6; color: var(--xd-text); letter-spacing: -0.01em; }
+.xa-rule { width: 56px; height: 3px; border-radius: 3px; margin-top: 22px; background: linear-gradient(90deg, var(--xd-accent), var(--xd-accent2)); }
+
+/* ---------- founder ---------- */
+.xa-founder {
+  position: relative; overflow: hidden; border-radius: 28px; padding: clamp(26px, 5vw, 60px);
+  border: 1px solid var(--xd-border-strong); box-shadow: var(--xd-shadow);
+  background:
+    radial-gradient(640px circle at 0% 0%, var(--xd-glow-a), transparent 60%),
+    radial-gradient(560px circle at 100% 100%, var(--xd-glow-b), transparent 60%),
+    var(--xd-card);
+  display: grid; gap: clamp(28px, 5vw, 64px); align-items: center;
+}
+@media (min-width: 860px) { .xa-founder { grid-template-columns: minmax(240px, 340px) 1fr; } }
+.xa-photo-col { display: flex; flex-direction: column; align-items: center; text-align: center; }
+.xa-photo-ring {
+  position: relative; width: clamp(200px, 30vw, 300px); aspect-ratio: 1; border-radius: 50%; padding: 5px;
+  background: linear-gradient(140deg, var(--xd-accent), var(--xd-accent2) 55%, #38bdf8);
+  box-shadow: 0 0 0 8px color-mix(in srgb, var(--xd-accent) 12%, transparent), var(--xd-shadow);
+}
+.xa-photo-ring::after { content: ''; position: absolute; inset: -18px; border-radius: 50%; z-index: -1; background: var(--xd-glow-a); filter: blur(34px); opacity: 0.7; }
+.xa-photo { width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; background: var(--xd-bg2); border: 4px solid var(--xd-card); }
+.xa-photo-fallback {
+  width: 100%; height: 100%; border-radius: 50%; display: grid; place-items: center; border: 4px solid var(--xd-card);
+  font-size: clamp(3rem, 8vw, 4.5rem); font-weight: 800; letter-spacing: -0.04em; color: #fff;
+  background: linear-gradient(135deg, var(--xd-accent), var(--xd-accent2));
+}
+.xa-name { margin-top: 28px; font-size: clamp(1.5rem, 2.6vw, 1.9rem); font-weight: 800; letter-spacing: -0.03em; }
+.xa-role { margin-top: 10px; display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; border-radius: 999px; font-size: 13.5px; font-weight: 650; color: var(--xd-text); background: var(--xd-bg2); border: 1px solid var(--xd-border-strong); }
+.xa-role::before { content: ''; width: 7px; height: 7px; border-radius: 50%; background: linear-gradient(135deg, var(--xd-accent), var(--xd-accent2)); }
+.xa-company { margin-top: 10px; font-size: 14px; color: var(--xd-muted); }
+.xa-bio p { font-size: clamp(1rem, 1.35vw, 1.08rem); line-height: 1.85; color: var(--xd-muted); }
+.xa-bio p + p { margin-top: 1.2em; }
+.xa-quote-mark + p { font-size: clamp(1.15rem, 1.8vw, 1.35rem); line-height: 1.6; color: var(--xd-text); letter-spacing: -0.01em; }
+.xa-quote-mark { font-size: 4.5rem; line-height: 0.6; font-family: Georgia, serif; color: var(--xd-accent2); opacity: 0.55; user-select: none; }
+
+/* ---------- mission & vision ---------- */
+.xa-duo { display: grid; gap: 24px; }
+@media (min-width: 900px) { .xa-duo { grid-template-columns: 1fr 1fr; } }
+.xa-panel { position: relative; overflow: hidden; border-radius: 24px; padding: clamp(26px, 4vw, 44px); background: var(--xd-card); border: 1px solid var(--xd-border); transition: border-color 0.3s, transform 0.3s; }
+.xa-panel:hover { border-color: var(--xd-border-strong); transform: translateY(-3px); }
+.xa-panel::before { content: ''; position: absolute; width: 280px; height: 280px; right: -90px; top: -110px; border-radius: 50%; background: var(--xd-glow-a); filter: blur(60px); opacity: 0.6; pointer-events: none; }
+.xa-panel.vision::before { background: var(--xd-glow-b); left: -90px; right: auto; }
+.xa-icon { position: relative; display: grid; place-items: center; width: 54px; height: 54px; border-radius: 16px; color: #fff; background: linear-gradient(135deg, var(--xd-accent), var(--xd-accent2)); box-shadow: 0 12px 28px -10px var(--xd-glow-a); }
+.xa-panel h2 { position: relative; margin-top: 24px; font-size: clamp(1.5rem, 2.7vw, 2.1rem); line-height: 1.15; letter-spacing: -0.03em; font-weight: 800; }
+.xa-panel p { position: relative; margin-top: 16px; font-size: 1.02rem; line-height: 1.8; color: var(--xd-muted); }
+.xa-panel p + p { margin-top: 1em; }

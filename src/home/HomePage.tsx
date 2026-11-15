@@ -7,7 +7,7 @@ import { TemplateGallery } from './TemplateGallery';
 import { FeatureSection } from './FeatureSection';
 import { FinalCTA } from './FinalCTA';
 import { Footer } from './Footer';
-import { SCROLLER_ID } from './scroll';
+import { SCROLLER_ID, scrollToId, takePendingScroll } from './scroll';
 import { useTheme } from './theme';
 
 type Active = 'xd-top' | 'templates' | 'features';
@@ -24,6 +24,14 @@ export default function HomePage() {
     return () => {
       document.title = prev;
     };
+  }, []);
+
+  // arriving from the About page via "Templates" / "Explore"
+  useEffect(() => {
+    const id = takePendingScroll();
+    if (!id) return;
+    const t = setTimeout(() => scrollToId(id), 80);
+    return () => clearTimeout(t);
   }, []);
 
   useEffect(() => {

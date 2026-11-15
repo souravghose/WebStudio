@@ -23,6 +23,7 @@
   color-scheme: dark;
 }
 .xd-home[data-theme='light'] {
+  --xd-btn-text: #fff;
   --xd-bg: #fafbff;
   --xd-bg2: #f1f5f9;
   --xd-card: #ffffff;
@@ -59,6 +60,7 @@
 }
 .xd-home *, .xd-home *::before, .xd-home *::after { transition-property: background-color, border-color, color, box-shadow, opacity, transform, filter; transition-duration: 0.3s; transition-timing-function: ease; }
 .xd-home a { color: inherit; text-decoration: none; }
+.xd-home a.xd-btn-primary, .xd-home .xd-btn-primary { color: var(--xd-btn-text, #fff); }
 .xd-home :focus-visible { outline: 2px solid var(--xd-accent2); outline-offset: 3px; border-radius: 8px; }
 .xd-muted { color: var(--xd-muted); }
 .xd-band { background: var(--xd-bg2); }
