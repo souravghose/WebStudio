@@ -20,8 +20,9 @@ const getRoute = (): Route => {
 };
 
 function Splash({ route }: { route: Route }) {
-  const dark = route === 'editor' || initialTheme() === 'dark';
-  return <div className="h-full w-full" style={{ background: dark ? (route === 'editor' ? '#0D1117' : '#080D18') : '#FAFBFF' }} />;
+  const dark = initialTheme() === 'dark';
+  const bg = route === 'editor' ? (dark ? '#0D1117' : '#EEF1F7') : dark ? '#080D18' : '#FAFBFF';
+  return <div className="h-full w-full" style={{ background: bg }} />;
 }
 
 export function Root() {

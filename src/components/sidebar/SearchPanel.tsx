@@ -133,7 +133,7 @@ export function SearchPanel() {
                 const post = h.text.slice(h.column - 1 + h.length, h.column - 1 + h.length + 60);
                 return (
                   <button key={i} onClick={() => openFile(r.path, h.line, h.column)} className="block w-full truncate py-0.5 pl-8 pr-2 text-left font-mono text-[11px] text-ws-muted hover:bg-ws-hover">
-                    {start > 0 && '…'}{pre.trimStart()}<mark className="rounded-sm bg-ws-accent/40 text-white">{mid}</mark>{post}
+                    {start > 0 && '…'}{pre.trimStart()}<mark className="rounded-sm bg-ws-accent/40 text-ws-strong">{mid}</mark>{post}
                   </button>
                 );
               })}

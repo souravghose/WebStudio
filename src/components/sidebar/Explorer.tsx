@@ -148,7 +148,7 @@ export function Explorer() {
             setMenu({ x: e.clientX, y: e.clientY, target: node.path, type: node.type });
           }}
           style={{ paddingLeft: 8 + depth * 14 }}
-          className={`flex h-[26px] cursor-pointer select-none items-center gap-1.5 pr-2 text-[13px] transition-colors ${isActive ? 'bg-ws-accent/20 text-white' : isSel ? 'bg-ws-hover text-ws-text' : 'text-ws-muted hover:bg-ws-hover hover:text-ws-text'} ${isDrop ? 'outline outline-1 -outline-offset-1 outline-ws-accent bg-ws-accent/10' : ''}`}
+          className={`flex h-[26px] cursor-pointer select-none items-center gap-1.5 pr-2 text-[13px] transition-colors ${isActive ? 'bg-ws-accent/20 text-ws-strong' : isSel ? 'bg-ws-hover text-ws-text' : 'text-ws-muted hover:bg-ws-hover hover:text-ws-text'} ${isDrop ? 'outline outline-1 -outline-offset-1 outline-ws-accent bg-ws-accent/10' : ''}`}
         >
           {isFolder ? <Chevron open={open} /> : <span className="w-3.5 shrink-0" />}
           {isFolder ? <FolderIcon open={open} /> : <FileIcon path={node.path} />}

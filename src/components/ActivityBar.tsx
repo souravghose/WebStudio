@@ -23,7 +23,7 @@ export function ActivityBar() {
         aria-label={label}
         aria-pressed={active}
         onClick={() => (active ? toggleSidebar(false) : setSidebarView(id))}
-        className={`relative grid h-11 w-full place-items-center transition-colors ${active ? 'text-white' : 'text-ws-muted hover:text-ws-text'}`}
+        className={`relative grid h-11 w-full place-items-center transition-colors ${active ? 'text-ws-strong' : 'text-ws-muted hover:text-ws-text'}`}
       >
         {active && <span className="absolute inset-y-2 left-0 w-0.5 rounded-r bg-ws-accent" />}
         <Icon size={20} strokeWidth={1.7} />

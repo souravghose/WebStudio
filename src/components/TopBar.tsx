@@ -1,12 +1,13 @@
 import { useEffect, useState } from 'react';
 import {
   AlertCircle, Check, ChevronDown, CircleUser, Columns2, Download, FileCode2, FolderPlus, Keyboard, Info, Loader2,
-  EllipsisVertical, Menu, Play, Redo2, Save, Settings as SettingsIcon, Sparkles, SquareSplitHorizontal, Undo2, Eye,
+  EllipsisVertical, Menu, Play, Redo2, Save, Settings as SettingsIcon, Sparkles, SquareSplitHorizontal, Undo2, Eye, Moon, Sun,
 } from 'lucide-react';
 import { useCurrentProject, useStore } from '../store/useStore';
 import { editorBridge } from '../lib/editorBridge';
 import { exportProject, formatActive, runPreview, saveProject } from '../lib/actions';
 import { validateName } from '../lib/paths';
+import { toggleEditorTheme, useEditorTheme } from '../lib/editorTheme';
 import { Dropdown } from './ui/Dropdown';
 import type { Layout } from '../types';
 
@@ -63,6 +64,7 @@ function ProjectName() {
 }
 
 export function TopBar() {
+  const editorTheme = useEditorTheme();
   const projects = useStore((s) => s.projects);
   const currentId = useStore((s) => s.currentId);
   const layout = useStore((s) => s.layout);
@@ -128,6 +130,9 @@ export function TopBar() {
         </Dropdown>
 
         <button className="icon-btn hidden sm:inline-flex" title="Export project as ZIP (Ctrl+Shift+S)" onClick={() => void exportProject()}><Download size={15} /></button>
+        <button className="icon-btn" title={editorTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} aria-label={editorTheme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'} onClick={toggleEditorTheme}>
+          {editorTheme === 'dark' ? <Sun size={15} /> : <Moon size={15} />}
+        </button>
         <button className="icon-btn hidden sm:inline-flex" title="Settings" onClick={() => st.setSidebarView('settings')}><SettingsIcon size={15} /></button>
 
         <Dropdown

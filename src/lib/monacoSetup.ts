@@ -25,6 +25,7 @@ import type { EditorLang } from './paths';
 loader.config({ monaco });
 
 export const THEME = 'webstudio-dark';
+export const THEME_LIGHT = 'webstudio-light';
 
 monaco.editor.defineTheme(THEME, {
   base: 'vs-dark',
@@ -62,6 +63,45 @@ monaco.editor.defineTheme(THEME, {
     'input.background': '#0B1220',
     'input.border': '#273244',
     'focusBorder': '#6366F1',
+  },
+});
+
+monaco.editor.defineTheme(THEME_LIGHT, {
+  base: 'vs',
+  inherit: true,
+  rules: [
+    { token: 'tag', foreground: '0369A1' },
+    { token: 'attribute.name', foreground: '6D28D9' },
+    { token: 'attribute.value', foreground: 'B45309' },
+    { token: 'keyword', foreground: '6D28D9' },
+    { token: 'comment', foreground: '64748B', fontStyle: 'italic' },
+    { token: 'string', foreground: 'B45309' },
+    { token: 'number', foreground: '047857' },
+  ],
+  colors: {
+    'editor.background': '#FFFFFF',
+    'editor.foreground': '#1F2937',
+    'editorLineNumber.foreground': '#94A3B8',
+    'editorLineNumber.activeForeground': '#334155',
+    'editor.lineHighlightBackground': '#F1F5F9',
+    'editor.selectionBackground': '#4F46E533',
+    'editor.inactiveSelectionBackground': '#4F46E518',
+    'editorCursor.foreground': '#4F46E5',
+    'editorIndentGuide.background1': '#E2E8F0',
+    'editorIndentGuide.activeBackground1': '#CBD5E1',
+    'editorWidget.background': '#F8FAFC',
+    'editorWidget.border': '#D8DEE9',
+    'editorSuggestWidget.background': '#FFFFFF',
+    'editorSuggestWidget.border': '#D8DEE9',
+    'editorSuggestWidget.selectedBackground': '#E0E7FF',
+    'editorHoverWidget.background': '#FFFFFF',
+    'editorHoverWidget.border': '#D8DEE9',
+    'minimap.background': '#FFFFFF',
+    'scrollbarSlider.background': '#94A3B866',
+    'scrollbarSlider.hoverBackground': '#64748B88',
+    'input.background': '#FFFFFF',
+    'input.border': '#D8DEE9',
+    'focusBorder': '#4F46E5',
   },
 });
 

@@ -2,7 +2,8 @@ import { useEffect, useMemo, useState } from 'react';
 import Editor from '@monaco-editor/react';
 import type { editor as MonacoEditor } from 'monaco-editor';
 import { Code2, Minus, Plus, WrapText, X } from 'lucide-react';
-import { monaco, THEME } from '../lib/monacoSetup';
+import { monaco, THEME, THEME_LIGHT } from '../lib/monacoSetup';
+import { useEditorTheme } from '../lib/editorTheme';
 import { editorBridge } from '../lib/editorBridge';
 import { exportProject, formatActive, runPreview, saveProject } from '../lib/actions';
 import { basename, isImage, languageFor } from '../lib/paths';
@@ -19,6 +20,7 @@ export function EditorArea() {
   const activePath = useStore((s) => s.activePath);
   const dirty = useStore((s) => s.dirty);
   const settings = useStore((s) => s.settings);
+  const editorTheme = useEditorTheme();
   const revealTarget = useStore((s) => s.revealTarget);
   const { setActive, closeTab, closeOtherTabs, updateContent, updateSettings } = useStore.getState();
   const [menu, setMenu] = useState<{ x: number; y: number; path: string } | null>(null);
@@ -157,7 +159,7 @@ export function EditorArea() {
         {showMonaco && node && (
           <Editor
             height="100%"
-            theme={THEME}
+            theme={editorTheme === 'light' ? THEME_LIGHT : THEME}
             path={`/${projectId}/${node.path}`}
             language={lang}
             value={node.content}
@@ -210,7 +212,7 @@ export function EditorArea() {
           <div className="absolute inset-0 grid place-items-center overflow-auto bg-ws-editor p-6 text-center">
             {isImage(node.path) ? (
               <div>
-                <img src={node.content} alt={node.path} className="mx-auto max-h-[60vh] max-w-full rounded-lg border border-ws-border bg-[repeating-conic-gradient(#1b2433_0%_25%,#0f1623_0%_50%)] bg-[length:16px_16px]" />
+                <img src={node.content} alt={node.path} className="mx-auto max-h-[60vh] max-w-full rounded-lg border border-ws-border ws-checker" />
                 <p className="mt-3 text-xs text-ws-muted">{node.path}</p>
               </div>
             ) : (

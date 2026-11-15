@@ -146,7 +146,7 @@ export function PreviewPane() {
         </button>
       </div>
 
-      <div className="relative flex min-h-0 flex-1 justify-center overflow-auto bg-[#0a0f1a] p-0">
+      <div className="relative flex min-h-0 flex-1 justify-center overflow-auto bg-ws-stage p-0">
         {hasEntry ? (
           <iframe
             ref={frameRef}

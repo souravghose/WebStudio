@@ -5,16 +5,18 @@ export default {
     extend: {
       colors: {
         ws: {
-          bg: '#0D1117',
-          side: '#111827',
-          editor: '#0B1220',
-          panel: '#111827',
-          accent: '#6366F1',
-          accent2: '#8B5CF6',
-          text: '#E5E7EB',
-          muted: '#94A3B8',
-          border: '#273244',
-          hover: '#1b2535',
+          bg: 'rgb(var(--ws-bg) / <alpha-value>)',
+          side: 'rgb(var(--ws-side) / <alpha-value>)',
+          editor: 'rgb(var(--ws-editor) / <alpha-value>)',
+          panel: 'rgb(var(--ws-panel) / <alpha-value>)',
+          accent: 'rgb(var(--ws-accent) / <alpha-value>)',
+          accent2: 'rgb(var(--ws-accent2) / <alpha-value>)',
+          text: 'rgb(var(--ws-text) / <alpha-value>)',
+          muted: 'rgb(var(--ws-muted) / <alpha-value>)',
+          border: 'rgb(var(--ws-border) / <alpha-value>)',
+          hover: 'rgb(var(--ws-hover) / <alpha-value>)',
+          strong: 'rgb(var(--ws-strong) / <alpha-value>)',
+          stage: 'rgb(var(--ws-stage) / <alpha-value>)',
         },
       },
       fontFamily: {
