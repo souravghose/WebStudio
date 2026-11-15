@@ -20,6 +20,7 @@ import TsWorker from 'monaco-editor/esm/vs/language/typescript/ts.worker?worker'
 };
 
 import { formatSource } from './format';
+import './editorEnhancements'; // Emmet, snippets, tag renaming, HTML diagnostics
 import type { EditorLang } from './paths';
 
 loader.config({ monaco });

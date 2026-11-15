@@ -5,6 +5,7 @@ import { Code2, Minus, Plus, WrapText, X } from 'lucide-react';
 import { monaco, THEME, THEME_LIGHT } from '../lib/monacoSetup';
 import { useEditorTheme } from '../lib/editorTheme';
 import { editorBridge } from '../lib/editorBridge';
+import { installEditorFeatures } from '../lib/editorFeatures';
 import { exportProject, formatActive, runPreview, saveProject } from '../lib/actions';
 import { basename, isImage, languageFor } from '../lib/paths';
 import { useCurrentProject, useStore } from '../store/useStore';
@@ -63,6 +64,7 @@ export function EditorArea() {
     editor.addCommand(KeyMod.CtrlCmd | KeyCode.Enter, () => runPreview());
     editor.addCommand(KeyMod.CtrlCmd | KeyCode.KeyB, () => useStore.getState().toggleSidebar());
     editor.addCommand(KeyMod.CtrlCmd | KeyCode.Backquote, () => useStore.getState().toggleBottom());
+    installEditorFeatures(editor); // Emmet Tab, tag highlight, Ctrl+P / Ctrl+Shift+P
 
     editor.onDidChangeCursorPosition((e) => {
       const sel = editor.getSelection();
@@ -204,6 +206,20 @@ export function EditorArea() {
               automaticLayout: true,
               fixedOverflowWidgets: true,
               contextmenu: true,
+              // multi-cursor & selection (VS Code behaviour): Alt+click, Shift+Alt+drag column select,
+              // Ctrl+Alt+↑/↓, Ctrl+D, Ctrl+Shift+L, Escape → single cursor
+              multiCursorModifier: 'alt',
+              multiCursorPaste: 'spread',
+              multiCursorMergeOverlapping: true,
+              emptySelectionClipboard: true,
+              columnSelection: false,
+              // suggestions from every open/project file, snippets and words
+              wordBasedSuggestions: 'allDocuments',
+              suggest: { showSnippets: true, showWords: true, showKeywords: true, preview: true, snippetsPreventQuickSuggestions: false },
+              suggestSelection: 'first',
+              acceptSuggestionOnCommitCharacter: true,
+              occurrencesHighlight: 'singleFile',
+              selectionHighlight: true,
             }}
           />
         )}

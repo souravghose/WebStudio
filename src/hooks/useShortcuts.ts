@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import { useStore } from '../store/useStore';
 import { exportProject, formatActive, runPreview, saveProject } from '../lib/actions';
+import { editorBridge } from '../lib/editorBridge';
+import { openQuickOpen } from '../lib/quickOpen';
 
 /**
  * Global shortcuts for when focus is outside Monaco. Inside the editor the same commands are
@@ -34,6 +36,12 @@ export function useShortcuts() {
       } else if (mod && !e.shiftKey && key === 'b') {
         e.preventDefault();
         st.toggleSidebar();
+      } else if (mod && !e.shiftKey && !e.altKey && key === 'p') {
+        e.preventDefault();
+        openQuickOpen();
+      } else if (mod && e.shiftKey && !e.altKey && key === 'p') {
+        e.preventDefault();
+        void editorBridge.get()?.getAction('editor.action.quickCommand')?.run();
       } else if (mod && (e.key === '`' || e.code === 'Backquote')) {
         e.preventDefault();
         st.toggleBottom();
@@ -58,4 +66,22 @@ export const SHORTCUTS: { keys: string; action: string }[] = [
   { keys: 'Ctrl + `', action: 'Toggle bottom panel' },
   { keys: 'Ctrl + Wheel', action: 'Zoom editor text' },
   { keys: 'F2', action: 'Rename selected file (Explorer)' },
+  { keys: 'Tab', action: 'Expand Emmet abbreviation (HTML / CSS)' },
+  { keys: 'Ctrl + P', action: 'Go to file' },
+  { keys: 'Ctrl + Shift + P', action: 'Command palette' },
+  { keys: 'Ctrl + G', action: 'Go to line' },
+  { keys: 'Alt + Click', action: 'Add cursor' },
+  { keys: 'Ctrl + Alt + ↑ / ↓', action: 'Add cursor above / below' },
+  { keys: 'Ctrl + D', action: 'Select next occurrence' },
+  { keys: 'Ctrl + Shift + L', action: 'Select all occurrences' },
+  { keys: 'Shift + Alt + Drag', action: 'Column (box) selection' },
+  { keys: 'Escape', action: 'Back to a single cursor' },
+  { keys: 'Shift + Alt + ↓ / ↑', action: 'Duplicate line down / up' },
+  { keys: 'Alt + ↑ / ↓', action: 'Move line up / down' },
+  { keys: 'Ctrl + Shift + K', action: 'Delete line' },
+  { keys: 'Ctrl + X / C', action: 'Cut / copy line (no selection)' },
+  { keys: 'Ctrl + Space', action: 'Trigger suggestions' },
+  { keys: 'Ctrl + Shift + Space', action: 'Parameter hints' },
+  { keys: 'F12', action: 'Go to definition' },
+  { keys: 'F2 (in editor)', action: 'Rename symbol' },
 ];
