@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pulse Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <aside class="side" id="side">
+    <div class="logo">◆ Pulse</div>
+    <nav>
+      <a class="on" href="#">▦ Overview</a>
+      <a href="#">◔ Analytics</a>
+      <a href="#">☰ Orders</a>
+      <a href="#">☺ Customers</a>
+      <a href="#">⚙ Settings</a>
+    </nav>
+  </aside>
+
+  <div class="main">
+    <header class="top">
+      <button id="menuBtn" class="menu" aria-label="Menu">☰</button>
+      <input id="search" type="search" placeholder="Search orders…" />
+      <select id="range"><option value="7">Last 7 days</option><option value="14">Last 14 days</option><option value="30">Last 30 days</option></select>
+      <div class="me">JD</div>
+    </header>
+
+    <section class="kpis">
+      <div class="kpi"><span>Revenue</span><b id="kRevenue">$0</b><small class="up">▲ 12.4%</small></div>
+      <div class="kpi"><span>Orders</span><b id="kOrders">0</b><small class="up">▲ 8.1%</small></div>
+      <div class="kpi"><span>Customers</span><b id="kCustomers">0</b><small class="up">▲ 3.6%</small></div>
+      <div class="kpi"><span>Refund rate</span><b id="kRefund">0%</b><small class="down">▼ 0.4%</small></div>
+    </section>
+
+    <section class="panels">
+      <div class="panel wide"><h3>Revenue</h3><canvas id="chart" height="240"></canvas></div>
+      <div class="panel"><h3>Traffic sources</h3><div id="sources"></div></div>
+    </section>
+
+    <section class="panel">
+      <h3>Recent orders</h3>
+      <table>
+        <thead><tr><th data-key="id">Order</th><th data-key="customer">Customer</th><th data-key="amount">Amount</th><th data-key="status">Status</th></tr></thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

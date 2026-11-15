@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summit Consulting Group</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar"><span>📞 +1 (555) 012-3456</span><span>✉ hello@summitgroup.example</span></div>
+  <header class="nav">
+    <a class="brand" href="#home">Summit<span>.</span></a>
+    <nav id="nav">
+      <a href="#services">Services</a>
+      <a href="#numbers">Results</a>
+      <a href="#team">Team</a>
+      <a href="#testimonials">Clients</a>
+      <a class="cta" href="#contact">Free consultation</a>
+    </nav>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-text">
+      <p class="eyebrow">Strategy · Finance · Operations</p>
+      <h1>We help ambitious businesses grow with confidence.</h1>
+      <p>Summit Consulting Group partners with leadership teams to turn strategy into measurable results.</p>
+      <a class="btn" href="#contact">Book a consultation</a>
+    </div>
+    <div class="hero-card"><b>98%</b><span>client retention</span><hr /><b>350+</b><span>projects delivered</span></div>
+  </section>
+
+  <section id="services" class="section">
+    <h2>Our services</h2>
+    <div class="cards">
+      <article><div class="n">01</div><h3>Business strategy</h3><p>Market analysis, positioning and growth roadmaps tailored to your goals.</p></article>
+      <article><div class="n">02</div><h3>Financial advisory</h3><p>Budgeting, forecasting and investment planning for sustainable growth.</p></article>
+      <article><div class="n">03</div><h3>Operations</h3><p>Streamline processes, cut waste and improve delivery performance.</p></article>
+      <article><div class="n">04</div><h3>Digital transformation</h3><p>Modernise tools and workflows with the right technology partners.</p></article>
+    </div>
+  </section>
+
+  <section id="numbers" class="stats">
+    <div><b data-count="350">0</b><span>Projects delivered</span></div>
+    <div><b data-count="120">0</b><span>Happy clients</span></div>
+    <div><b data-count="15">0</b><span>Years experience</span></div>
+    <div><b data-count="24">0</b><span>Industry awards</span></div>
+  </section>
+
+  <section id="team" class="section">
+    <h2>Meet the team</h2>
+    <div class="cards team">
+      <article><div class="avatar a1">SR</div><h3>Sara Rahman</h3><p>Managing Partner</p></article>
+      <article><div class="avatar a2">DK</div><h3>Daniel Kim</h3><p>Head of Finance</p></article>
+      <article><div class="avatar a3">MO</div><h3>Maria Ortiz</h3><p>Operations Lead</p></article>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section light">
+    <h2>What clients say</h2>
+    <blockquote id="quote"></blockquote>
+    <p id="author" class="author"></p>
+    <div class="dots" id="dots"></div>
+  </section>
+
+  <section id="contact" class="section">
+    <h2>Get in touch</h2>
+    <form id="contactForm" class="form" novalidate>
+      <div class="row"><input id="cName" placeholder="Full name" /><input id="cEmail" placeholder="Email" /></div>
+      <select id="cService"><option value="">Select a service</option><option>Business strategy</option><option>Financial advisory</option><option>Operations</option><option>Digital transformation</option></select>
+      <textarea id="cMsg" rows="4" placeholder="How can we help?"></textarea>
+      <button class="btn" type="submit">Send request</button>
+      <p id="cStatus" class="status"></p>
+    </form>
+  </section>
+
+  <footer class="footer">© <span id="year"></span> Summit Consulting Group · All rights reserved</footer>
+  <script src="script.js"></script>
+</body>
+</html>
